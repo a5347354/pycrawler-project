@@ -20,13 +20,13 @@
 
 ![convert_to_list](/pictures/convert_to_list.png)
 
-<p>觀察資料時，發現到title會有發佈的廠商，這會影響到後續計算詞頻時的結果，先將廠商拿出來，並從title中剔除。</p>
-<p>這邊用正規表達式做切割，再取得最後一個Array，就是廠商，把第一個array到倒數第三個串(append)起來就是title了</p>
+<p>觀察資料時，發現到title中會有發佈者，這會影響到後續計算詞頻時的結果，先將發佈者拿出來，並從title中剔除。</p>
+<p>這邊用正規表達式做切割，再取得最後一個Array，就是發佈者，把第一個array到倒數第三個串(append)起來就是title了</p>
 
 ![get_publisher_from_title](/pictures/get_publisher_from_title.png)
 ![remove_publisher_from_title](/pictures/remove_publisher_from_title.png)
 
-<p>再把它轉成dataframe，後來發現有些沒有出版商，這邊選擇直接濾掉該筆</p>
+<p>再把它轉成dataframe，後來發現有些沒有發佈者，這邊選擇直接濾掉該筆</p>
 
 ![convert_to_dataframe](/pictures/convert_to_dataframe.png)
 
