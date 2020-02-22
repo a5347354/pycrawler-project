@@ -35,8 +35,8 @@
 
 ![convert_to_dataframe](/pictures/convert_to_dataframe.png)
 
-## 詞頻: DFITF
-<p>下一步計算dfitf，jieba需要字詞庫，來進行分詞，雖然詞庫是免費的，但堪用，在計算dfitf的權重列出最多的40筆</p>
+## 詞頻: TF-ITF
+<p>下一步計算TF-ITF，jieba需要字詞庫，來進行分詞，雖然詞庫是免費的，但堪用，在計算TF-ITF的權重列出最多的40筆</p>
 
 ![caculate_tfidf](/pictures/caculate_tfidf.png)
 
