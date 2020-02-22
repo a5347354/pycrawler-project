@@ -12,3 +12,35 @@
 但資料太多json有點亂，把len條小，並用json Editor Online整理一下
 ![json_editor_online](/pictures/json_editor_online.png)
 
+<p>知道大概的json結構後，用request和json把資料抓下來，確定一下是否符合預期的比數</p>
+
+![request](/pictures/request.png)
+
+<p>將資料塞進List，以便進行之後的利用</p>
+
+![convert_to_list](/pictures/convert_to_list.png)
+
+<p>再觀察資料時，發現到title會有發佈的廠商，這會影響到後續計算詞頻時的結果，先將廠商拿出來，並從title中剔除。</p>
+<p>這邊用正規表達式做切割，再取得最後一個Array，就是廠商，把第一個array到倒數第三個串(append)起來就是title了</p>
+
+![get_publisher_from_title](/pictures/get_publisher_from_title.png)
+![remove_publisher_from_title](/pictures/remove_publisher_from_title.png)
+
+<p>再把它轉成dataframe，後來發現有些沒有出版商，這邊選擇直接濾掉該筆</p>
+
+![convert_to_dataframe](/pictures/convert_to_dataframe.png)
+
+<p>下一步計算dfitf，jieba需要字詞庫，來進行分詞，雖然詞庫是免費的，但堪用，在計算dfitf的權重列出最多的40筆</p>
+
+![caculate_tfidf](/pictures/caculate_tfidf.png)
+
+<p>為了手動計算字詞頻率，必須要將stop_words過濾掉，像是「什麼」之類的，因為title有些特別的標點符號，在這順便加入到stop_words中。(stop_words的詞庫也是上網找的)</p>
+
+![remove_stop_words](/pictures/remove_stop_words.png)
+
+<p>計算字詞的頻率，採用分組統計並加總，就可針對字詞計數</p>
+
+![count_freq](/pictures/count_freq.png)
+
+
+![world_cloud](/pictures/world_cloud.png)
