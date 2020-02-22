@@ -1,6 +1,10 @@
-# Crawler Exam
+# 一、專題摘要
+## 主題：
+## 目標：
+<p>觀察網站與伺服器的行為，並使用程式透過python中的request抓取資料，並觀察抓回來的資料，利用json套件，清理及整理資料，近一步轉換成淺顯易懂的表格，並瞭解兩種計算字詞頻率的方式，學習使用tfidf，計算字詞的權重，另一種計算方式，將資料進行重組以及移除stop words，利用傳統的方式計算字詞出現的頻率，並會製成淺顯易懂的文字雲。</p>
 
-## 實作方法介紹
+# 二、 實作方法介紹
+## 觀察網站與伺服器的行為
 <p>原本採用Seleinum抓資料回來，後來覺得太過費時，加上Coupy的前端感覺是採用互動式彈出資料，想說用Chrome開發人員工具觀察前端與伺服器的溝通方式，發現前端與伺服器GET API取得JSON資料，一次30筆(len=30)，從startNewsID這個參數當作起始</p>
 
 ![Chrome_Developer_Tool](/pictures/Chrome_Developer_Tool.png)
@@ -16,6 +20,7 @@
 
 ![request](/pictures/request.png)
 
+## 整理資料
 <p>將資料塞進List，以便進行之後的利用，這邊有點小問題，後來執行發現程式掛了，才發現有筆資料竟然沒有socialScorer這個json的key，只好選擇跳過那筆</p>
 
 ![convert_to_list](/pictures/convert_to_list.png)
@@ -30,10 +35,12 @@
 
 ![convert_to_dataframe](/pictures/convert_to_dataframe.png)
 
+## 詞頻: DFITF
 <p>下一步計算dfitf，jieba需要字詞庫，來進行分詞，雖然詞庫是免費的，但堪用，在計算dfitf的權重列出最多的40筆</p>
 
 ![caculate_tfidf](/pictures/caculate_tfidf.png)
 
+## 詞頻: 計數
 <p>為了手動計算字詞頻率，必須要將stop_words過濾掉，像是「什麼」之類的，因為title有些特別的標點符號，在這順便加入到stop_words中。(stop_words的詞庫也是上網找的)</p>
 
 ![remove_stop_words](/pictures/remove_stop_words.png)
@@ -42,6 +49,11 @@
 
 ![count_freq](/pictures/count_freq.png)
 
+## 繪製文字雲
 <p>有了詞頻，就可以用world_cloud將文字雲畫出來，這邊要注意，因為文字雲需要中文字的字型，不然會出現亂碼，所以隨便載了個免費的來使用</p>
 
 ![world_cloud](/pictures/world_cloud.png)
+
+# 三、成果展示
+
+![World_Cloud_Final.png](/pictures/World_Cloud_Final.png)
