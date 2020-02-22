@@ -16,7 +16,7 @@
 
 ![request](/pictures/request.png)
 
-<p>將資料塞進List，以便進行之後的利用</p>
+<p>將資料塞進List，以便進行之後的利用，這邊有點小問題，後來執行發現程式掛了，才發現有筆資料竟然沒有socialScorer這個json的key，只好選擇跳過那筆</p>
 
 ![convert_to_list](/pictures/convert_to_list.png)
 
