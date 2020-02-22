@@ -20,7 +20,7 @@
 
 ![convert_to_list](/pictures/convert_to_list.png)
 
-<p>再觀察資料時，發現到title會有發佈的廠商，這會影響到後續計算詞頻時的結果，先將廠商拿出來，並從title中剔除。</p>
+<p>觀察資料時，發現到title會有發佈的廠商，這會影響到後續計算詞頻時的結果，先將廠商拿出來，並從title中剔除。</p>
 <p>這邊用正規表達式做切割，再取得最後一個Array，就是廠商，把第一個array到倒數第三個串(append)起來就是title了</p>
 
 ![get_publisher_from_title](/pictures/get_publisher_from_title.png)
@@ -42,5 +42,6 @@
 
 ![count_freq](/pictures/count_freq.png)
 
+<p>有了詞頻，就可以用world_cloud將文字雲畫出來，這邊要注意，因為文字雲需要中文字的字型，不然會出現亂碼，所以隨便載了個免費的來使用</p>
 
 ![world_cloud](/pictures/world_cloud.png)
